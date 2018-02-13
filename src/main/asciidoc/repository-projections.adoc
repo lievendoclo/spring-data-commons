@@ -90,7 +90,9 @@ On method invocation, the `address` property of the target instance will be obta
 [[projections.interfaces.closed]]
 === Closed projections
 
-A projection interface whose accessor methods all match properties of the target aggregate are considered closed projections.
+A projection interface whose accessor methods all match properties of the target aggregate are considered closed projections. 
+However, if a projection contains a property of a `Collection`, `Map` (or one of its subtypes), that projection will always be considered
+as an open projection (see `CollectionAwareProjectionFactory`).
 
 .A closed projection
 ====
